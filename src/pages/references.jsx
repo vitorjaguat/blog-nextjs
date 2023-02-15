@@ -1,13 +1,20 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import PostItem from '@/components/PostItem';
+import { projectFirestore } from '@/firebase/config';
 
 const DUMMY = [
   {
     id: '1',
     title: 'Testing',
     text: `# Hello
+    When working with params (in dynamic pages like [itemId].js), we can extract the requested param using the context.params property. In order to do that, we have to pass the context object to the getStaticProps() function.
+
+
 I am *me*
 Alternatively, a plain React app would use \`useEffect\` without dependencies to fetch the data from a server. But this would result in an 'empty' source code, not good for search-engine purposes.
+&nbsp;  
+When working with params (in dynamic pages like [itemId].js), we can extract the requested param using the context.params property. In order to do that, we have to pass the context object to the getStaticProps() function.
+
 `,
   },
   {
@@ -36,10 +43,31 @@ export default function References(props) {
 }
 
 export async function getStaticProps({ locale }) {
+  const ref = projectFirestore.collection('posts');
+
+  const data = await projectFirestore.collection('posts').get();
+  const results = data.docs.map((post) => ({
+    id: post.id,
+    ...post.data(),
+  }));
+
+  // const unsubscribe = ref.onSnapshot(
+  //   (snapshot) => {
+  //     snapshot.docs.forEach((doc) => {
+  //       results.push({ ...doc.data(), id: doc.id });
+  //     });
+  //   },
+  //   (error) => {
+  //     console.log(error);
+  //   }
+  // );
+
+  // unsubscribe();
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
-      dummy: DUMMY,
+      dummy: results,
     },
     revalidate: 1,
   };
