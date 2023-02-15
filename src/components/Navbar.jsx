@@ -38,14 +38,8 @@ export default function Navbar() {
       >
         <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16 max-w-[1240px] mx-auto'>
           <Link href='/#home' scroll={false}>
-            {/* <Image
-            src='/../public/assets/img/logo.png'
-            alt='logo'
-            width={150}
-            height={50}
-          /> */}
             {/* <div className='h-1 w-[200px] bg-slate-800'></div> */}
-            <div className='px-1 text-lg'>Cabanagem 200</div>
+            <div className='px-1 text-lg'>Blog</div>
           </Link>
           <div>
             <ul className='hidden md:flex'>
@@ -97,12 +91,7 @@ export default function Navbar() {
             <div>
               <div className='flex w-full items-center justify-between'>
                 <Link href='/#home' scroll={false}>
-                  <Image
-                    src='/../public/assets/logo.png'
-                    width={60}
-                    height={35}
-                    alt='logo'
-                  />
+                  Blog
                 </Link>
                 <div
                   onClick={handleNav}
@@ -122,7 +111,7 @@ export default function Navbar() {
                     {t('navbar.home')}
                   </li>
                 </Link>
-                <Link href='/#about' scroll={false}>
+                <Link href='/references' scroll={false}>
                   <li onClick={() => setNav(false)} className='py-4 text-sm'>
                     {t('navbar.references')}
                   </li>
