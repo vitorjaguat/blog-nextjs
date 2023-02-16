@@ -34,7 +34,12 @@ export default function References(props) {
         <div className='mt-10 h-full w-full'>
           {console.log(data)}
           {data.map((post) => (
-            <PostItem title={post.title} text={post.text} key={post.id} />
+            <PostItem
+              title={post.title}
+              text={post.text}
+              key={post.id}
+              date={post.date}
+            />
           ))}
         </div>
       </div>
