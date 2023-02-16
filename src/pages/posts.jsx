@@ -12,7 +12,7 @@ const DUMMY = [
 
 I am *me*
 Alternatively, a plain React app would use \`useEffect\` without dependencies to fetch the data from a server. But this would result in an 'empty' source code, not good for search-engine purposes.
-&nbsp;  
+
 When working with params (in dynamic pages like [itemId].js), we can extract the requested param using the context.params property. In order to do that, we have to pass the context object to the getStaticProps() function.
 
 `,

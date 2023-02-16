@@ -1,7 +1,8 @@
 {
   "navbar": {
     "home": "home",
-    "references": "references",
+    "posts": "posts",
+    "new-post": "new post",
     "glossary": "glossary",
     "press": "press",
     "about": "about this website"

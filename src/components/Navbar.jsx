@@ -4,12 +4,10 @@ import Link from 'next/link';
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
-import { useTranslation } from 'next-i18next';
 
 export default function Navbar() {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
-  const { t } = useTranslation('common');
 
   useEffect(() => {
     const handleShadow = () => {
@@ -45,28 +43,28 @@ export default function Navbar() {
             <ul className='hidden md:flex'>
               <Link href='/' scroll={false}>
                 <li className='ml-8 text-sm uppercase hover:border-b text-[#999999]'>
-                  {t('navbar.home')}
+                  Home
                 </li>
               </Link>
-              <Link href='/references' scroll={false}>
+              <Link href='/posts' scroll={false}>
                 <li className='ml-8 text-sm uppercase hover:border-b text-[#999999]'>
-                  {t('navbar.references')}
+                  Posts
                 </li>
               </Link>
-              <Link href='/#skills' scroll={false}>
+              <Link href='/new-post' scroll={false}>
                 <li className='ml-8 text-sm uppercase hover:border-b text-[#999999]'>
-                  {t('navbar.glossary')}
+                  New Post
                 </li>
               </Link>
               <Link href='/#projects' scroll={false}>
                 <li className='ml-8 text-sm uppercase hover:border-b text-[#999999]'>
-                  {t('navbar.press')}
+                  Press
                 </li>
               </Link>
 
               <Link href='/#contact' scroll={false}>
                 <li className='ml-8 text-sm uppercase hover:border-b text-[#999999]'>
-                  {t('navbar.about')}
+                  About
                 </li>
               </Link>
             </ul>
@@ -101,34 +99,34 @@ export default function Navbar() {
                 </div>
               </div>
               <div className='border-b border-gray-300 my-4'>
-                <p className='w-[85%] md:w-[90%] py-4'>cabanagem200</p>
+                <p className='w-[85%] md:w-[90%] py-4'>Just my opinion</p>
               </div>
             </div>
             <div className='py-4 flex flex-col'>
               <ul className='uppercase'>
                 <Link href='/#home' scroll={false}>
                   <li onClick={() => setNav(false)} className='py-4 text-sm'>
-                    {t('navbar.home')}
+                    Home
                   </li>
                 </Link>
-                <Link href='/references' scroll={false}>
+                <Link href='/posts' scroll={false}>
                   <li onClick={() => setNav(false)} className='py-4 text-sm'>
-                    {t('navbar.references')}
+                    Posts
                   </li>
                 </Link>
-                <Link href='/#skills' scroll={false}>
+                <Link href='/new-post' scroll={false}>
                   <li onClick={() => setNav(false)} className='py-4 text-sm'>
-                    {t('navbar.glossary')}
+                    New Post
                   </li>
                 </Link>
                 <Link href='/#projects' scroll={false}>
                   <li onClick={() => setNav(false)} className='py-4 text-sm'>
-                    {t('navbar.press')}
+                    Press
                   </li>
                 </Link>
                 <Link href='/#contact' scroll={false}>
                   <li onClick={() => setNav(false)} className='py-4 text-sm'>
-                    {t('navbar.about')}
+                    Contact
                   </li>
                 </Link>
               </ul>
