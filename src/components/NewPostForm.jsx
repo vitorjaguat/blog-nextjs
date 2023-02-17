@@ -14,7 +14,7 @@ export default function NewPostForm({ addPost }) {
     const newPostData = {
       title,
       text,
-      date: new Date(),
+      date: new Date().toJSON(),
     };
 
     addPost(newPostData);

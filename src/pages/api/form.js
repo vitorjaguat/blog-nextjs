@@ -12,6 +12,7 @@ export default async function handler(req, res) {
       await projectFirestore.collection('posts').doc(uuid()).set({
         title: body.title,
         text: body.text,
+        date: body.date,
       });
       return res.status(200).json({ data: 'Success!' });
     } catch (err) {

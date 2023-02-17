@@ -27,7 +27,6 @@ export default function NewPost() {
       <div className='max-w-[1240px] mx-auto'>
         <h2 className=''>New Post</h2>
         <NewPostForm addPost={addPost} />
-        <NewPostPreview />
       </div>
     </div>
   );
