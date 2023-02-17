@@ -3,7 +3,7 @@ import { projectFirestore } from '@/firebase/config';
 import PostItem from '@/components/PostItem';
 
 export default function Home(props) {
-  const data = props.allPosts;
+  const data = props.latestPosts;
 
   return (
     <>
@@ -38,15 +38,15 @@ export default function Home(props) {
 export async function getStaticProps() {
   const ref = projectFirestore.collection('posts');
 
-  const data = ref.orderBy('date', 'desc').limit(3).get();
-  const results = data.docs.map((post) => ({
+  const data = await ref.orderBy('date', 'desc').limit(3).get();
+  const results = data.docs.map((post, i) => ({
     id: post.id,
     ...post.data(),
   }));
 
   return {
     props: {
-      allPosts: results,
+      latestPosts: results,
     },
     revalidate: 1,
   };
