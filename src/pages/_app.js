@@ -1,6 +1,5 @@
 import Navbar from '@/components/Navbar';
 import '@/styles/globals.css';
-import { appWithTranslation } from 'next-i18next';
 import localFont from '@next/font/local';
 
 const stanley = localFont({
@@ -16,4 +15,4 @@ const App = ({ Component, pageProps }) => {
   );
 };
 
-export default appWithTranslation(App);
+export default App;
