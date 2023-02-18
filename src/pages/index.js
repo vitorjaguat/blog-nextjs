@@ -1,24 +1,18 @@
 import Head from 'next/head';
 import { projectFirestore } from '@/firebase/config';
 import PostItem from '@/components/PostItem';
+import Header from '@/components/Header';
 
 export default function Home(props) {
   const data = props.latestPosts;
 
   return (
     <>
-      <Head>
-        <title>Blog</title>
-        <meta name='description' content='This is a blog!' />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
+      <Header />
 
-      <div className='w-full pt-[120px]'>
+      <div className='w-full'>
         <div className='max-w-[1240px] mx-auto'>
-          <h2 className=''>Blog Posts</h2>
-          <div className='mt-10 h-full w-full'>
-            {/* {console.log(data)} */}
+          <div className='h-full w-full'>
             {data.map((post) => (
               <PostItem
                 title={post.title}

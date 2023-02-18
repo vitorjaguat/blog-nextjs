@@ -29,18 +29,20 @@ export default function PostItem({ title, text, date, id }) {
   };
 
   return (
-    <div className='border-solid rounded-md p-4 shadow-md my-5 bg-slate-300'>
-      <h2>{title}</h2>
+    <div className='border-solid rounded-md shadow-md my-5 bg-slate-300 overflow-hidden'>
+      <div className='px-16 py-10'>
+        <h2>{title}</h2>
 
-      <ReactMarkdown
-        className='whitespace-pre-wrap py-8'
-        remarkPlugins={[remarkBreaks, remarkGfm]}
-      >
-        {text}
-      </ReactMarkdown>
+        <ReactMarkdown
+          className='whitespace-pre-wrap py-8'
+          remarkPlugins={[remarkBreaks, remarkGfm]}
+        >
+          {text}
+        </ReactMarkdown>
+      </div>
 
-      <div className='flex justify-between'>
-        <div className='flex'>
+      <div className='p-4 flex justify-between mt-10 mb-[-15px] bg-slate-50'>
+        <div className='flex pb-3'>
           <div
             onClick={handleDelete}
             title='Delete'

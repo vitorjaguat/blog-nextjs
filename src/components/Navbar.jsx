@@ -26,18 +26,18 @@ export default function Navbar() {
 
   return (
     <>
-      <div className='fixed z-[99] shadow-md bg-slate-600 w-full h-[95px]'></div>
+      {/* <div className='fixed z-[99] shadow-md bg-slate-600 w-full h-[70px]'></div> */}
       <div
         className={
           shadow
-            ? 'fixed w-full h-16 shadow-lg z-[100] ease-in duration-300 bg-slate-500'
-            : 'fixed w-full h-16 shadow-md z-[100] ease-in duration-200 bg-slate-500'
+            ? 'fixed w-full h-16 shadow-lg z-[100] ease-in duration-300 bg-slate-200'
+            : 'fixed w-full h-16 shadow-md z-[100] ease-in duration-200 bg-slate-200'
         }
       >
         <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16 max-w-[1240px] mx-auto'>
           <Link href='/#home' scroll={false}>
             {/* <div className='h-1 w-[200px] bg-slate-800'></div> */}
-            <div className='px-1 text-lg'>Blog</div>
+            <div className='px-1 text-xl font-bold italic'>n - o - t</div>
           </Link>
           <div>
             <ul className='hidden md:flex'>
@@ -88,8 +88,8 @@ export default function Navbar() {
           >
             <div>
               <div className='flex w-full items-center justify-between'>
-                <Link href='/#home' scroll={false}>
-                  Blog
+                <Link className='font-bold italic' href='/#home' scroll={false}>
+                  n - o - t
                 </Link>
                 <div
                   onClick={handleNav}
@@ -99,7 +99,9 @@ export default function Navbar() {
                 </div>
               </div>
               <div className='border-b border-gray-300 my-4'>
-                <p className='w-[85%] md:w-[90%] py-4'>Just my opinion</p>
+                <p className='w-[85%] md:w-[90%] py-4 font-thin'>
+                  notes on technology
+                </p>
               </div>
             </div>
             <div className='py-4 flex flex-col'>
