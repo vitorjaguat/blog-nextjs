@@ -20,7 +20,7 @@ export default function NewPost() {
     console.log(data);
 
     setTimeout(() => {
-      router.push('/posts');
+      router.replace('/');
     }, 2000);
   };
 
