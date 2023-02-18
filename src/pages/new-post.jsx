@@ -19,7 +19,9 @@ export default function NewPost() {
 
     console.log(data);
 
-    router.push('/posts');
+    setTimeout(() => {
+      router.push('/posts');
+    }, 2000);
   };
 
   return (
