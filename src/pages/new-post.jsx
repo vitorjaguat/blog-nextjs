@@ -22,6 +22,7 @@ export default function NewPost() {
     setTimeout(() => {
       router.replace('/');
       router.replace('/');
+      router.replace('/');
     }, 2000);
   };
 
