@@ -20,9 +20,7 @@ export default function NewPost() {
     console.log(data);
 
     setTimeout(() => {
-      router.replace('/');
-      router.replace('/');
-      router.replace('/');
+      router.push('/', undefined, { shallow: false });
     }, 2000);
   };
 
