@@ -9,7 +9,7 @@ export default function Header() {
             notes on technology
           </h1>
           <p className='text-end text-lg lg:text-xl mt-[35%] sm:mt-[25%] lg:mt-[15%] ml-[30%] lg:ml-[70%] w-[70%] lg:w-[50%] lg:'>
-            exploring new technologies from a humanized point of view
+            exploring new technologies from a humanized point of view.
           </p>
         </div>
         <svg
