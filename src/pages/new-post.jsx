@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { projectFirestore } from '@/firebase/config';
 import { v4 as uuid } from 'uuid';
 import NewPostForm from '@/components/NewPostForm';

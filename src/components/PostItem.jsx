@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { RxPencil2 } from 'react-icons/rx';
 import { projectFirestore } from '@/firebase/config';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 export default function PostItem({ title, text, date, id }) {
