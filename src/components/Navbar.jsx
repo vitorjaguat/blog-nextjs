@@ -1,13 +1,16 @@
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
+import { MdOutlineLogout } from 'react-icons/md';
+import { useAuthContext } from '@/utils/useAuthContext';
+import { projectAuth } from '@/firebase/config';
 
 export default function Navbar() {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
+  const { user, dispatch } = useAuthContext();
 
   useEffect(() => {
     const handleShadow = () => {
@@ -22,6 +25,15 @@ export default function Navbar() {
 
   const handleNav = () => {
     setNav(!nav);
+  };
+
+  const handleLogout = async () => {
+    try {
+      await projectAuth.signOut();
+      dispatch({ type: 'LOGOUT' });
+    } catch (err) {
+      alert(err.message);
+    }
   };
 
   return (
@@ -56,17 +68,35 @@ export default function Navbar() {
                   New Post
                 </li>
               </Link>
-              <Link href='/signup' scroll={false}>
-                <li className='ml-8 text-sm uppercase hover:border-b text-[#999999]'>
-                  Sign up
-                </li>
-              </Link>
+              {!user && (
+                <Link href='/signup' scroll={false}>
+                  <li className='ml-8 text-sm uppercase hover:border-b text-[#999999]'>
+                    Login
+                  </li>
+                </Link>
+              )}
 
               <Link href='/#contact' scroll={false}>
                 <li className='ml-8 text-sm uppercase hover:border-b text-[#999999]'>
                   About
                 </li>
               </Link>
+              {user && (
+                <>
+                  <li>
+                    <p className='ml-16 text-sm tracking-wider'>
+                      hello, {user.displayName}!
+                    </p>
+                  </li>
+                  <li>
+                    <MdOutlineLogout
+                      className='ml-4 text-slate-700'
+                      size={19}
+                      onClick={handleLogout}
+                    />
+                  </li>
+                </>
+              )}
             </ul>
             <div onClick={handleNav} className='md:hidden text-[#999999]'>
               <AiOutlineMenu size={25} />
@@ -88,20 +118,36 @@ export default function Navbar() {
           >
             <div>
               <div className='flex w-full items-center justify-between'>
-                <Link className='font-bold italic' href='/' scroll={false}>
+                <Link
+                  className='font-bold italic text-lg'
+                  href='/'
+                  scroll={false}
+                >
                   n - o - t
                 </Link>
                 <div
                   onClick={handleNav}
-                  className='rounded-full shadow-md p-3 cursor-pointer'
+                  className='rounded-full shadow-sm p-2 bg-slate-200 cursor-pointer'
                 >
                   <AiOutlineClose />
                 </div>
               </div>
-              <div className='border-b border-gray-300 my-4'>
-                <p className='w-[85%] md:w-[90%] py-4 font-thin'>
-                  notes on technology
-                </p>
+
+              <div className='border-b border-gray-300 pb-6 my-4'>
+                <div className='w-[85%] md:w-[90%] py-4'>
+                  {user && (
+                    <li className='flex'>
+                      <p className=' text-md tracking-wider'>
+                        hello, {user.displayName}!
+                      </p>
+                      <MdOutlineLogout
+                        className='ml-10 text-slate-700'
+                        size={18}
+                        onClick={handleLogout}
+                      />
+                    </li>
+                  )}
+                </div>
               </div>
             </div>
             <div className='py-4 flex flex-col'>
@@ -121,11 +167,13 @@ export default function Navbar() {
                     New Post
                   </li>
                 </Link>
-                <Link href='/signup' scroll={false}>
-                  <li onClick={() => setNav(false)} className='py-4 text-sm'>
-                    Sign up
-                  </li>
-                </Link>
+                {!user && (
+                  <Link href='/signup' scroll={false}>
+                    <li onClick={() => setNav(false)} className='py-4 text-sm'>
+                      Login
+                    </li>
+                  </Link>
+                )}
                 <Link href='/#contact' scroll={false}>
                   <li onClick={() => setNav(false)} className='py-4 text-sm'>
                     Contact

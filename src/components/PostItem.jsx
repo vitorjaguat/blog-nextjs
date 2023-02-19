@@ -37,7 +37,7 @@ export default function PostItem({ title, text, date, id }) {
           className='whitespace-pre-wrap py-8'
           remarkPlugins={[remarkBreaks, remarkGfm]}
           components={{
-            code: ({ node, ...props }) => (
+            code: ({ node, inline, ...props }) => (
               <span
                 style={{
                   backgroundColor: '#00000010',
@@ -54,7 +54,7 @@ export default function PostItem({ title, text, date, id }) {
         >
           {text}
         </ReactMarkdown>
-        <ReactMarkdown
+        {/* <ReactMarkdown
           components={{
             // Map `h1` (`# heading`) to use `h2`s.
             h1: 'h2',
@@ -63,7 +63,7 @@ export default function PostItem({ title, text, date, id }) {
               <i style={{ color: 'red' }} {...props} />
             ),
           }}
-        />
+        /> */}
       </div>
 
       <div className='p-4 flex justify-between mt-10 mb-[-15px] bg-slate-50'>
