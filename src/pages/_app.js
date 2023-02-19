@@ -42,7 +42,7 @@ const App = ({ Component, pageProps }) => {
       />
       <div className={nunito.className}>
         <Navbar />
-        <Component {...pageProps} />
+        <Component key={router.asPath} {...pageProps} />
       </div>
     </>
   );
