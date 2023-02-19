@@ -47,7 +47,7 @@ export default function Navbar() {
         }
       >
         <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16 max-w-[1240px] mx-auto'>
-          <Link href='/#home' scroll={false}>
+          <Link href='/' scroll={false}>
             {/* <div className='h-1 w-[200px] bg-slate-800'></div> */}
             <div className='px-1 text-xl font-bold italic'>n - o - t</div>
           </Link>
