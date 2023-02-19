@@ -1,6 +1,4 @@
 import { useRouter } from 'next/navigation';
-import { projectFirestore } from '@/firebase/config';
-import { v4 as uuid } from 'uuid';
 import NewPostForm from '@/components/NewPostForm';
 
 export default function NewPost() {
@@ -17,11 +15,7 @@ export default function NewPost() {
 
     const data = await res.json();
 
-    console.log(data);
-
-    setTimeout(() => {
-      router.push('/', undefined, { shallow: false });
-    }, 2000);
+    router.push('/', undefined, { shallow: false });
   };
 
   return (

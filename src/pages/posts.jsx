@@ -46,7 +46,7 @@ export default function References(props) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const ref = projectFirestore.collection('posts');
 
   const data = await projectFirestore
@@ -62,6 +62,5 @@ export async function getStaticProps() {
     props: {
       allPosts: results,
     },
-    revalidate: 1,
   };
 }

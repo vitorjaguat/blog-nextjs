@@ -29,7 +29,7 @@ export default function Home(props) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const ref = projectFirestore.collection('posts');
 
   const data = await ref.orderBy('date', 'desc').limit(3).get();
@@ -42,6 +42,5 @@ export async function getStaticProps() {
     props: {
       latestPosts: results,
     },
-    revalidate: 1,
   };
 }

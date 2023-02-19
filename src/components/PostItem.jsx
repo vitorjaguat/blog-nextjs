@@ -25,11 +25,7 @@ export default function PostItem({ title, text, date, id }) {
     } catch (err) {
       console.log(err);
     }
-    setTimeout(() => {
-      router.replace('/');
-      router.replace('/');
-      router.replace('/');
-    }, 2000);
+    router.replace('/');
   };
 
   return (
