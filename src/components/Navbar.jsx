@@ -56,9 +56,9 @@ export default function Navbar() {
                   New Post
                 </li>
               </Link>
-              <Link href='/#projects' scroll={false}>
+              <Link href='/signup' scroll={false}>
                 <li className='ml-8 text-sm uppercase hover:border-b text-[#999999]'>
-                  Press
+                  Sign up
                 </li>
               </Link>
 
@@ -88,7 +88,7 @@ export default function Navbar() {
           >
             <div>
               <div className='flex w-full items-center justify-between'>
-                <Link className='font-bold italic' href='/#home' scroll={false}>
+                <Link className='font-bold italic' href='/' scroll={false}>
                   n - o - t
                 </Link>
                 <div
@@ -106,7 +106,7 @@ export default function Navbar() {
             </div>
             <div className='py-4 flex flex-col'>
               <ul className='uppercase'>
-                <Link href='/#home' scroll={false}>
+                <Link href='/' scroll={false}>
                   <li onClick={() => setNav(false)} className='py-4 text-sm'>
                     Home
                   </li>
@@ -121,9 +121,9 @@ export default function Navbar() {
                     New Post
                   </li>
                 </Link>
-                <Link href='/#projects' scroll={false}>
+                <Link href='/signup' scroll={false}>
                   <li onClick={() => setNav(false)} className='py-4 text-sm'>
-                    Press
+                    Sign up
                   </li>
                 </Link>
                 <Link href='/#contact' scroll={false}>
