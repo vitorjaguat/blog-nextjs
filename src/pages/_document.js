@@ -29,6 +29,11 @@ export default function Document() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <body>
+        <img
+          src='https://thumbs.dreamstime.com/b/touchscreen-technology-icon-145272266.jpg'
+          alt='n'
+          style={{ display: 'none' }}
+        />
         <Main />
         <NextScript />
       </body>

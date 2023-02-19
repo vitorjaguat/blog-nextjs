@@ -25,7 +25,7 @@ export default function Navbar() {
   };
 
   return (
-    <>
+    <div className='navbar'>
       {/* <div className='fixed z-[99] shadow-md bg-slate-600 w-full h-[70px]'></div> */}
       <div
         className={
@@ -155,6 +155,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

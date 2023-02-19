@@ -35,7 +35,11 @@ html {
   }
 
   li {
-    @apply cursor-pointer;
+    @apply list-disc;
+  }
+
+  .navbar li {
+    @apply cursor-pointer list-none;
   }
 
   button {

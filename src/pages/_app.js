@@ -35,6 +35,11 @@ const App = ({ Component, pageProps }) => {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      <img
+        src='https://thumbs.dreamstime.com/b/touchscreen-technology-icon-145272266.jpg'
+        alt='n'
+        style={{ display: 'none' }}
+      />
       <div className={nunito.className}>
         <Navbar />
         <Component {...pageProps} />
