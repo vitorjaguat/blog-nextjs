@@ -1,7 +1,7 @@
 import { projectAuth } from '@/firebase/config';
 import { useState } from 'react';
 
-export default function signup() {
+export default function Signup() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -13,7 +13,10 @@ export default function signup() {
         email,
         password
       );
-      await userCredential.additionalUserInfo.console.log(userCredential.user);
+      await userCredential.user.updateProfile({
+        displayName: name,
+      });
+      console.log(userCredential.user);
     } catch (err) {
       alert(err.message);
     }
