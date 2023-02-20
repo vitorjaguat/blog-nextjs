@@ -48,7 +48,7 @@ export default function Home(props) {
               </div>
             )}
 
-            <Link href={`/posts#${showPosts}`}>
+            <Link href='/posts'>
               <div className='bg-slate-300 py-2 px-4 rounded-md cursor-pointer'>
                 <p>all posts</p>
               </div>

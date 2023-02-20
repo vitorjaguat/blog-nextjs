@@ -34,7 +34,7 @@ export default function PostItem({ title, text, date, id }) {
         <h2>{title}</h2>
 
         <ReactMarkdown
-          className='whitespace-pre-wrap py-8'
+          className='whitespace-pre-wrap py-8 list-disc'
           remarkPlugins={[remarkBreaks, remarkGfm]}
           components={{
             code: ({ node, inline, ...props }) => (
@@ -46,6 +46,14 @@ export default function PostItem({ title, text, date, id }) {
                   fontFamily: 'Menlo',
                   lineHeight: '1.7',
                   fontSize: '0.9em',
+                }}
+                {...props}
+              />
+            ),
+            a: ({ node, inline, ...props }) => (
+              <a
+                style={{
+                  textDecoration: 'underline',
                 }}
                 {...props}
               />

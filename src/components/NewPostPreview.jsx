@@ -9,6 +9,34 @@ export default function NewPostPreview({ title, text }) {
       <ReactMarkdown
         className='whitespace-pre-wrap py-8'
         remarkPlugins={[remarkBreaks, remarkGfm]}
+        components={{
+          code: ({ node, inline, ...props }) => (
+            <span
+              style={{
+                backgroundColor: '#00000010',
+                borderRadius: '7px',
+                padding: '3px',
+                fontFamily: 'Menlo',
+                lineHeight: '1.7',
+                fontSize: '0.9em',
+              }}
+              {...props}
+            />
+          ),
+          a: ({ node, inline, ...props }) => (
+            <a
+              style={{
+                textDecoration: 'underline',
+              }}
+              {...props}
+            />
+          ),
+          // ol: ({ node, inline, ...props }) => (
+          //   <ol>
+          //     <li {...props} />
+          //   </ol>
+          // ),
+        }}
       >
         {text}
       </ReactMarkdown>

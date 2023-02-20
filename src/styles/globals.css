@@ -34,8 +34,12 @@ html {
     @apply text-3xl sm:text-3xl;
   }
 
-  li {
+  /* li {
     @apply list-disc;
+  } */
+
+  ol li {
+    @apply list-decimal;
   }
 
   .navbar li {
