@@ -3,17 +3,17 @@ import headerImg from '../../public/assets/img/header.svg';
 export default function Header() {
   return (
     <div className='w-full bg-amber-100'>
-      <div className='flex justify-between pt-[100px] overflow-hidden max-w-[1240px] mx-auto'>
+      <div className='flex justify-between pt-[10%] sm:pt-[100px] overflow-hidden max-w-[1240px] mx-auto'>
         <div>
-          <h1 className='sm:text-5xl lg:text-6xl ml-[10%] mt-[30%] sm:mt-[15%]'>
+          <h1 className='text-3xl sm:text-5xl lg:text-6xl ml-[10%] mt-[30%] sm:mt-[15%]'>
             notes on technology
           </h1>
-          <p className='text-end text-lg lg:text-xl mt-[35%] sm:mt-[25%] lg:mt-[15%] ml-[30%] lg:ml-[70%] w-[70%] lg:w-[50%] lg:'>
+          <p className='text-end text-sm sm:text-lg lg:text-xl mt-[75%] sm:mt-[25%] lg:mt-[15%] ml-[40%] sm:ml-[30%] lg:ml-[70%] w-[70%] lg:w-[50%] lg:'>
             exploring new technologies from a humanized point of view.
           </p>
         </div>
         <svg
-          className='translate-y-1 self-end'
+          className='translate-y-[16%] translate-x-8 sm:translate-x-0 sm:translate-y-1 self-end'
           width='585'
           height='400'
           viewBox='0 0 585 635'
