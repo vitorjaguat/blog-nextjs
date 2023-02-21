@@ -6,6 +6,7 @@ import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { MdOutlineLogout } from 'react-icons/md';
 import { useAuthContext } from '@/utils/useAuthContext';
 import { projectAuth } from '@/firebase/config';
+import { motion } from 'framer-motion';
 
 export default function Navbar() {
   const [nav, setNav] = useState(false);
@@ -37,7 +38,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className='navbar'>
+    <motion.div className='navbar' initial={{ y: -50 }} animate={{ y: 0 }}>
       {/* <div className='fixed z-[99] shadow-md bg-slate-600 w-full h-[70px]'></div> */}
       <div
         className={
@@ -203,6 +204,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
