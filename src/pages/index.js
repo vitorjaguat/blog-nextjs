@@ -38,7 +38,7 @@ export default function Home(props) {
             )}
           </div>
 
-          <div className='pb-20 px-2 flex justify-between'>
+          <div className='pb-6 px-2 flex justify-center gap-6'>
             {showPosts <= 6 && (
               <div
                 className='bg-slate-300 py-2 px-4 rounded-md cursor-pointer'

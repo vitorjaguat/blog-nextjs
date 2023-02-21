@@ -1,8 +1,15 @@
-import { useRouter } from 'next/navigation';
 import NewPostForm from '@/components/NewPostForm';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { useAuthContext } from '@/utils/useAuthContext';
 
 export default function NewPost() {
   const router = useRouter();
+  const { user } = useAuthContext();
+
+  useEffect(() => {
+    user ? router.push('/new-post') : router.push('/signup');
+  }, [user]);
 
   const addPost = async (newPostData) => {
     const res = await fetch('/api/form', {

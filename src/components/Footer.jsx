@@ -2,7 +2,7 @@ import { AiOutlineMail } from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 
-export default function () {
+export default function Footer() {
   return (
     <div className='w-full h-[70px] bg-slate-300 flex-col justify-center'>
       <div className='h-full lg:w-[1240px] mx-auto flex items-center justify-between'>
