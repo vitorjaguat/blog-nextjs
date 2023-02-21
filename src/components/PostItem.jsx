@@ -6,8 +6,12 @@ import { RxPencil2 } from 'react-icons/rx';
 import { projectFirestore } from '@/firebase/config';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useAuthContext } from '@/utils/useAuthContext';
 
 export default function PostItem({ title, text, date, id }) {
+  //user is logged in? for update & delete
+  const { user } = useAuthContext();
+
   //date format:
   const dateNew = new Date(date);
   const dateFormatted =
@@ -77,13 +81,13 @@ export default function PostItem({ title, text, date, id }) {
       <div className='p-4 flex justify-between mt-10 mb-[-15px] bg-slate-50'>
         <div className='flex pb-3'>
           <div
-            onClick={handleDelete}
+            onClick={user ? handleDelete : () => router.push('/signup')}
             title='Delete'
             className='mr-4 py-1 px-1 w-fit bg-slate-200 rounded-md cursor-pointer'
           >
             <AiOutlineDelete size={20} />
           </div>
-          <Link href={`./update?id=${id}`}>
+          <Link href={user ? `./update?id=${id}` : '/signup'}>
             <div className='py-1 px-1 w-fit bg-slate-200 rounded-md cursor-pointer'>
               <RxPencil2 size={20} className='mr-auto' />
             </div>

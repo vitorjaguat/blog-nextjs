@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import '@/styles/globals.css';
 import { Nunito } from '@next/font/google';
 import { AuthContextProvider } from '@/context/AuthContext';
+import Footer from '@/components/Footer';
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -45,6 +46,7 @@ const App = ({ Component, pageProps }) => {
         <AuthContextProvider>
           <Navbar />
           <Component {...pageProps} />
+          <Footer />
         </AuthContextProvider>
       </div>
     </>

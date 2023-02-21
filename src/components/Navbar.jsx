@@ -64,7 +64,7 @@ export default function Navbar() {
                   Posts
                 </li>
               </Link>
-              <Link href='/new-post' scroll={false}>
+              <Link href={user ? '/new-post' : '/signup'} scroll={false}>
                 <li className='ml-8 text-sm uppercase hover:border-b text-[#999999]'>
                   New Post
                 </li>
@@ -77,7 +77,7 @@ export default function Navbar() {
                 </Link>
               )}
 
-              <Link href='/#contact' scroll={false}>
+              <Link href='/about' scroll={false}>
                 <li className='ml-8 text-sm uppercase hover:border-b text-[#999999]'>
                   About
                 </li>
@@ -113,7 +113,7 @@ export default function Navbar() {
           <div
             className={
               nav
-                ? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500'
+                ? 'fixed left-0 top-0 w-[65%] sm:w-[50%] md:w-[35%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500'
                 : 'fixed left-[-100%] p-10 ease-in duration-500'
             }
           >
@@ -134,7 +134,7 @@ export default function Navbar() {
                 </div>
               </div>
 
-              <div className='border-b border-gray-300 pb-6 my-4'>
+              <div className='pb-6 my-4'>
                 <div className='w-[85%] md:w-[90%] py-4'>
                   {user && (
                     <li className='flex'>
@@ -163,7 +163,7 @@ export default function Navbar() {
                     Posts
                   </li>
                 </Link>
-                <Link href='/new-post' scroll={false}>
+                <Link href={user ? '/new-post' : '/signup'} scroll={false}>
                   <li onClick={() => setNav(false)} className='py-4 text-sm'>
                     New Post
                   </li>
@@ -175,31 +175,12 @@ export default function Navbar() {
                     </li>
                   </Link>
                 )}
-                <Link href='/#contact' scroll={false}>
+                <Link href='/about' scroll={false}>
                   <li onClick={() => setNav(false)} className='py-4 text-sm'>
-                    Contact
+                    About
                   </li>
                 </Link>
               </ul>
-              <div className='pt-40'>
-                <p className='uppercase tracking-widest text-[#5651e5]'>
-                  Let's connect
-                </p>
-                <div className='flex items-center justify-between my-4 w-full sm:w-[80%]'>
-                  <div className='rounded-full shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
-                    <FaLinkedinIn />
-                  </div>
-                  <div className='rounded-full shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
-                    <FaGithub />
-                  </div>
-                  <div className='rounded-full shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
-                    <AiOutlineMail />
-                  </div>
-                  <div className='rounded-full shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
-                    <BsFillPersonLinesFill />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
