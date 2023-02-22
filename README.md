@@ -39,3 +39,7 @@ As rotas que levam à criação de novos posts e edição do conteúdo dos posts
 Num contexto de produção, os links e rotas para a edição de conteúdo pode ser protegida, garantindo-se o acesso apenas para os editores do blog/revista.
 
 Dessa forma, essa solução une o melhor de dois mundos: por um lado, há a rapidez de uma aplicação feita em React/Next.js; por outro lado, há a interatividade e facilidade de alimentação de conteúdo existente nos websites hospedados em plataformas como Wordpress, Wix, etc. - e sem a necessidade de pagamento por esses serviços.
+
+## Demo
+
+https://blog-nextjs-not.vercel.app/
