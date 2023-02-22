@@ -7,6 +7,8 @@ import Footer from '@/components/Footer';
 
 const nunito = Nunito({
   subsets: ['latin'],
+  variable: '--nunito-font',
+  display: 'swap',
 });
 
 const App = ({ Component, pageProps }) => {
@@ -42,13 +44,13 @@ const App = ({ Component, pageProps }) => {
         alt='n'
         style={{ display: 'none' }}
       />
-      <div className={nunito.className}>
+      <main className={`${nunito.variable} font-nunito`}>
         <AuthContextProvider>
           <Navbar />
           <Component {...pageProps} />
           <Footer />
         </AuthContextProvider>
-      </div>
+      </main>
     </>
   );
 };

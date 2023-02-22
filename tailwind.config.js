@@ -1,8 +1,11 @@
-// /** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        nunito: ['var(--nunito-font)'],
+      },
       colors: {
         primary: '#c1c1c1',
         secondary: '#909090',
