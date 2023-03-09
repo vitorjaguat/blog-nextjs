@@ -34,8 +34,7 @@ Para os estilos, foi usado o Tailwind CSS integrado ao Next.js. A página é tot
 
 Para o armazenamento em tempo real de dados, foi usado Firebase Firestore. Para o armazenamento dos usuários e dados de autenticação, foi usado Firebase Auth. Dessa forma, os dados adicionados pelos usuários persistem e podem ser acessados de qualquer dispositivo.
 
-As rotas que levam à criação de novos posts e edição do conteúdo dos posts existentes são protegidas de duas formas: client-side, a aplicação direciona usuários não-logados para a página de login; server-side, o banco de dados só aceita requisições do tipo GET de usuários não-logados. Assim, os usuários não-logados podem ler o conteúdo dos posts, mas não podem editar o conteúdo.
-Num contexto de produção, os links e rotas para a edição de conteúdo pode ser protegida, garantindo-se o acesso apenas para os editores do blog/revista.
+As rotas que levam à criação de novos posts e edição do conteúdo dos posts existentes são protegidas de duas formas: client-side, a aplicação direciona usuários não-logados para a página de login; server-side, o banco de dados só aceita requisições do tipo GET de usuários não-logados. Assim, os usuários não-logados podem ler o conteúdo dos posts, mas não podem editar o conteúdo. Num contexto de produção, os links e rotas para a edição de conteúdo pode ser protegida, garantindo-se o acesso apenas para os editores do blog/revista.
 
 Dessa forma, essa solução une o melhor de dois mundos: por um lado, há a rapidez de uma aplicação feita em React/Next.js; por outro lado, há a interatividade e facilidade de alimentação de conteúdo existente nos websites hospedados em plataformas como Wordpress, Wix, etc. - e sem a necessidade de pagamento por esses serviços.
 
